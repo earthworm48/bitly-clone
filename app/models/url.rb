@@ -12,17 +12,12 @@ class Url < ActiveRecord::Base
   # format: { with: /\A(http)s?\:\/\//, message: "invalid email!"}
 
   # store the short url to the database
-
   def shorten
     # self.short_url = Array.new(6){[*"A".."Z",*'a'..'z', *"0".."9"].sample}.join
     # until valid?
       self.short_url = SecureRandom.hex(3)
     # end
   end
-
-  # def validation
-
-  # end
 end
 
 

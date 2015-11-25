@@ -1,12 +1,6 @@
 require 'byebug'
 
-# get '/' do
-#   @urls = Url.all
-#   erb :"static/index"
-# end
-
 get '/' do
-  # @error = "hihi"
   @urls = Url.all
   @url = Url.new
   # puts "[LOG] Getting /"
@@ -18,13 +12,9 @@ post '/urls' do
   # puts "[LOG] Params: #{params.inspect}"
   @urls = Url.all
   @url = Url.new(long_url: params[:long_url])
-  # byebug
   if @url.save
     redirect '/'
   else
-    # byebug
-    # error = "not"
-
     erb :"static/index"
   end
 

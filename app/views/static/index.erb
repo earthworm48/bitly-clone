@@ -1,7 +1,7 @@
 <!-- <body bgcolor="grey">
   <body text="purple">
     <body link="blue"> -->
-<%=@url.errors.full_messages.each {|x| puts x}%>
+
 
 <h1>Enter the <b>URL address</b> you would like to shorten!</h1>
 
@@ -10,6 +10,8 @@
   <input type = 'text' name = 'long_url'>
   <input type = 'submit' value = 'Submit'>
 </form>
+
+<%=@url.errors.full_messages.each {|x| puts x}%>
 
 <table style="width:100%">
   <!-- <table border="5"> -->
