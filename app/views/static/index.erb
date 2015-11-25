@@ -6,10 +6,29 @@
 #### To create simple erb view file:
 ```
 # app/views/root.erb
-<h1>This is root page</h -->1> -->
+-->
 
-<form action = '#' method = "">
+<form action = '/urls' method = "post">
   Enter URL:
   <input type = 'text' name = 'long_url'>
   <input type = 'submit' value = 'Submit'>
 </form>
+
+<table style="width:100%">
+  <tr>
+    <th>ID</th>
+    <th>long url</th>
+    <th>short url</th>
+  </tr>
+
+<%Url.all.each do |url|%>
+  <tr>
+    <th><%= url.id%></th>
+    <th><%= url.long_url%></th>
+    <th><%= url.short_url%></th>
+  </tr>
+<% end%>
+
+</table>
+
+
