@@ -1,16 +1,9 @@
 <!-- <body bgcolor="grey">
   <body text="purple">
     <body link="blue"> -->
+<%=@url.errors.full_messages.each {|x| puts x}%>
+
 <h1>Enter the <b>URL address</b> you would like to shorten!</h1>
-<!-- <p>See Me in views/stati<!-- c/index.html.erb</p> -->
-<!-- <h2> User Data </h2>
-
-<br>
-#### To create simple erb view file:
-```
-# app/views/root.erb
--->
-
 
 <form action = '/urls' method = "post">
   Enter URL:
@@ -38,7 +31,4 @@
 <% end%>
 
 </table>
-
-
-
 

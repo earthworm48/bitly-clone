@@ -20,7 +20,9 @@ class Url < ActiveRecord::Base
     # end
   end
 
+  # def validation
 
+  # end
 end
 
 
