@@ -1,4 +1,7 @@
-<h1>Enter the URL address you would like to shorten!</h1>
+<!-- <body bgcolor="grey">
+  <body text="purple">
+    <body link="blue"> -->
+<h1>Enter the <b>URL address</b> you would like to shorten!</h1>
 <!-- <p>See Me in views/stati<!-- c/index.html.erb</p> -->
 <!-- <h2> User Data </h2>
 
@@ -8,6 +11,7 @@
 # app/views/root.erb
 -->
 
+
 <form action = '/urls' method = "post">
   Enter URL:
   <input type = 'text' name = 'long_url'>
@@ -15,20 +19,26 @@
 </form>
 
 <table style="width:100%">
+  <!-- <table border="5"> -->
+    <!-- <table cellpadding="5"> -->
   <tr>
-    <th>ID</th>
-    <th>long url</th>
-    <th>short url</th>
+    <th class="b5">ID</th>
+    <th class="b5"><p align="left">Long url</th>
+    <th class="b5"><p align="left">Short url</th>
+    <th class="b5"><p align="left">Click_counter</th>
   </tr>
 
-<%Url.all.each do |url|%>
+<% @urls.each do |url|%>
   <tr>
-    <th><%= url.id%></th>
-    <th><%= url.long_url%></th>
-    <th><%= url.short_url%></th>
+    <th class="b5"><p align="left"><%= url.id%></th>
+    <th class="b5"><p align="left"><%= url.long_url%></th>
+    <th class="b5"><p align="left"><a href = <%= url.long_url%> ><%= url.short_url%></a></th>
+    <th class="b5"><p align="left"><%= url.click_counter%></th>
   </tr>
 <% end%>
 
 </table>
+
+
 
 

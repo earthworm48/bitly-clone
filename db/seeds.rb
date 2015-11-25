@@ -10,7 +10,7 @@ class UrlImporter
       hash = {}
       long_url = URI(Faker::Internet.url)
       # short_url = Array.new(6){[*"A".."Z",*'a'..'z', *"0".."9"].sample}.join
-      short_url = SecureRandom.hex(6)
+      short_url = SecureRandom.hex(3)
       hash[:long_url] = long_url
       hash[:short_url] = short_url
       url = Url.create!(hash)

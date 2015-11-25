@@ -1,18 +1,26 @@
 require_relative '../../config/environments/test'
 require 'securerandom'
+require 'open-uri'
+require "net/http"
+require "byebug"
 
 class Url < ActiveRecord::Base
-  before_create :shorten
-  def shorten
-    # self.short_url = Array.new(6){[*"A".."Z",*'a'..'z', *"0".."9"].sample}.join
-    self.short_url = SecureRandom.hex(6)
-  end
+  # create the url before validate the short_url
+  before_validation :shorten
+  validates :long_url, presence: true, :format => URI::regexp(%w(http https))
+  validates :short_url, uniqueness: true, presence: true
+  # format: { with: /\A(http)s?\:\/\//, message: "invalid email!"}
 
   # store the short url to the database
-  # validate whether that particular url exist in the table
-  def self.exist?
 
+  def shorten
+    # self.short_url = Array.new(6){[*"A".."Z",*'a'..'z', *"0".."9"].sample}.join
+    # until valid?
+      self.short_url = SecureRandom.hex(3)
+    # end
   end
+
+
 end
 
 
