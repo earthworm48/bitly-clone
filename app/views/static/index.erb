@@ -3,34 +3,88 @@
     <body link="blue"> -->
 
 
-<h1>Enter the <b>URL address</b> you would like to shorten!</h1>
 
-<form action = '/urls' method = "post">
-  Enter URL:
-  <input type = 'text' name = 'long_url'>
-  <input type = 'submit' value = 'Submit'>
-</form>
+  <h1>Make it Short!</h1>
+  <h3>Enter Your URL Here:</h3>
+  <center>
+    <div class = "input_bar">
+
+      <form  action = '/urls' method = "post">
+            <input id = 'long_url' type = 'text' placeholder = '     What URL you want to shorten?' name = 'long_url'>
+            <input type = 'submit' value = 'SHORT IT!' class="submit" >
+      </form>
+
+    </div>
+
+  </center>
+
 
 <%=@url.errors.full_messages.each {|x| puts x}%>
+<div class="clear"></div>
+<div class="container">
+  <div class ="row">
+    <div class="headline">
+      <h3>Three simple steps to solve your problem!</h3>
+        <div class="row">
+          <div class="column">
 
-<table style="width:100%">
-  <!-- <table border="5"> -->
-    <!-- <table cellpadding="5"> -->
-  <tr>
-    <th class="b5">ID</th>
-    <th class="b5"><p align="left">Long url</th>
-    <th class="b5"><p align="left">Short url</th>
-    <th class="b5"><p align="left">Click_counter</th>
-  </tr>
+            <img class="round" src="/img/copy.png">
+            <p>
+              <span>Step 1: </br>
+              Copy the link <span>
 
-<% @urls.each do |url|%>
-  <tr>
-    <th class="b5"><p align="left"><%= url.id%></th>
-    <th class="b5"><p align="left"><%= url.long_url%></th>
-    <th class="b5"><p align="left"><a href = <%= url.long_url%> ><%= url.short_url%></a></th>
-    <th class="b5"><p align="left"><%= url.click_counter%></th>
-  </tr>
-<% end%>
+            </p>
 
-</table>
+          </div>
+
+          <div class="column">
+            <img class="round" src="/img/paste.png">
+            <p>
+              <span>Step 2: </br> Paste the link</span>
+            </p>
+
+          </div>
+
+          <div class="column">
+            <img class="round" src="/img/click.png">
+            <p>
+              <span>Step 3: </br> Click search</span>
+            </p>
+
+
+          </div>
+        </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+</div>
+
+
+
+  <table class="tableizer-table">
+    <!-- <table border="5"> -->
+      <!-- <table cellpadding="5"> -->
+    <tr >
+      <th class="firstrow"> ID</th>
+      <th class="firstrow"><p align="left">Long url</th>
+      <th class="firstrow"><p align="left">Short url</th>
+      <th class="firstrow"><p align="left">Click_counter</th>
+    </tr>
+
+  <% @urls.each do |url|%>
+    <tr>
+      <th class="b5"><p align="left"><%= url.id%></th>
+      <th class="b5"><p align="left"><%= url.long_url%></th>
+      <th class="b5"><p align="left"><a href = <%= url.short_url%> ><%= url.short_url%></a></th>
+      <th class="b5"><p align="left"><%= url.click_counter%></th>
+    </tr>
+  <% end%>
+
+  </table>
 
