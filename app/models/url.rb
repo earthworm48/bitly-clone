@@ -9,6 +9,7 @@ class Url < ActiveRecord::Base
   before_validation :shorten
   validates :long_url, presence: true, :format => URI::regexp(%w(http https))
   validates :short_url, uniqueness: true, presence: true
+  default_scope {order(created_at: :asc)}
   # format: { with: /\A(http)s?\:\/\//, message: "invalid email!"}
 
   # store the short url to the database

@@ -13,8 +13,8 @@
   <center>
     <div class = "input_bar">
 
-      <form  action = '/urls' method = "post">
-            <input id = 'long_url' type = 'text' placeholder = '     What URL you want to shorten?' name = 'long_url'>
+      <form  id="target" action = '/urls' method = "post">
+            <input id = 'long_url' type = 'text' placeholder = '     What URL do you want to shorten?' name = 'long_url'>
             <input type = 'submit' value = 'SHORT IT!' class="submit" id="submit_btn">
       </form>
     </div>
@@ -22,8 +22,12 @@
 
 <center>
   <div ID="error-block">
-  <button id="error-btn">Hide Error Message</button>  
-  <h4 id = "error-message" style="color:red"><strong>Errors!!</strong><%=@url.errors.full_messages.each {|x| puts x}%></h4>
+  <button id="error-btn">Show Error Message</button>  
+  <h4 id = "error-message" style="color:red;display: none"><strong>Errors!!</strong><br>
+  <% @url.errors.full_messages.each do |x|%>
+  <%=  x %>
+  <% end %>
+  </h4>
   </div>
 </center>
 
@@ -56,7 +60,7 @@
           <div class="column">
             <img class="round" src="/img/click.png">
             <p>
-              <span>Step 3: </br> Click search</span>
+              <span>Step 3: </br> Click 'Short It'</span>
             </p>
           </div>
         </div>
@@ -66,7 +70,7 @@
 
 
 
-  <table class="tableizer-table">
+  <table class="url-table">
     <!-- <table border="5"> -->
       <!-- <table cellpadding="5"> -->
     <tr >
