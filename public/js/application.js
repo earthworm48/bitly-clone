@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(".url").hover(function(){
+	$(".b5").hover(function(){
 		$(this).css("background-color","#DEB887");
 		},function(){
 		$(this).css("background-color","transparent");
@@ -7,6 +7,12 @@ $(document).ready(function(){
 	});
 
 	$("#submit_btn").click(function(){
-		console.log("Thanks for using Shortify");
+		alert( "Thanks for choosing Shortify!!" );
 	});
+
+	$( "#error-btn" ).click(function() {
+	  $( "#error-message" ).toggle( "slow" );
+	});
+
 });
+

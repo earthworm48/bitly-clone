@@ -6,6 +6,10 @@
 
   <h1>Make it Short!</h1>
   <h3>Enter Your URL Here:</h3>
+
+
+
+
   <center>
     <div class = "input_bar">
 
@@ -13,13 +17,17 @@
             <input id = 'long_url' type = 'text' placeholder = '     What URL you want to shorten?' name = 'long_url'>
             <input type = 'submit' value = 'SHORT IT!' class="submit" id="submit_btn">
       </form>
-
     </div>
-
   </center>
 
+<center>
+  <div ID="error-block">
+  <button id="error-btn">Hide Error Message</button>  
+  <h4 id = "error-message" style="color:red"><strong>Errors!!</strong><%=@url.errors.full_messages.each {|x| puts x}%></h4>
+  </div>
+</center>
 
-<%=@url.errors.full_messages.each {|x| puts x}%>
+
 <div class="clear"></div>
 <div class="container">
   <div class ="row">
@@ -50,19 +58,10 @@
             <p>
               <span>Step 3: </br> Click search</span>
             </p>
-
-
           </div>
         </div>
     </div>
-
-
   </div>
-
-
-
-
-
 </div>
 
 
@@ -71,7 +70,7 @@
     <!-- <table border="5"> -->
       <!-- <table cellpadding="5"> -->
     <tr >
-      <th class="firstrow"> ID</th>
+      <th class="firstrow">ID</th>
       <th class="firstrow">Long url</th>
       <th class="firstrow">Short url</th>
       <th class="firstrow">Click_counter</th>
