@@ -36,10 +36,10 @@ $(document).ready(function(){
 	           type: "POST",
 	           url: "/urls",
 	           data: $("#target").serialize(), // serializes the form's elements.
-	           success: function(data)
+	           success: function(response)
 	           {	
 	           		// debugger
-	               $(".url-table").append(data); // show response from the php script.
+	               $(".url-table").append(response); // show response from the php script.
 	           }
 	         });
 
