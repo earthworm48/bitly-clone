@@ -11,7 +11,7 @@
 
       <form  action = '/urls' method = "post">
             <input id = 'long_url' type = 'text' placeholder = '     What URL you want to shorten?' name = 'long_url'>
-            <input type = 'submit' value = 'SHORT IT!' class="submit" >
+            <input type = 'submit' value = 'SHORT IT!' class="submit" id="submit_btn">
       </form>
 
     </div>
@@ -72,17 +72,17 @@
       <!-- <table cellpadding="5"> -->
     <tr >
       <th class="firstrow"> ID</th>
-      <th class="firstrow"><p align="left">Long url</th>
-      <th class="firstrow"><p align="left">Short url</th>
-      <th class="firstrow"><p align="left">Click_counter</th>
+      <th class="firstrow">Long url</th>
+      <th class="firstrow">Short url</th>
+      <th class="firstrow">Click_counter</th>
     </tr>
 
   <% @urls.each do |url|%>
     <tr>
-      <th class="b5"><p align="left"><%= url.id%></th>
-      <th class="b5"><p align="left"><%= url.long_url%></th>
-      <th class="b5"><p align="left"><a href = <%= url.short_url%> ><%= url.short_url%></a></th>
-      <th class="b5"><p align="left"><%= url.click_counter%></th>
+      <th class="b5"><%= url.id%></th>
+      <th class="b5"><%= url.long_url%></th>
+      <th class="url"><a href = <%= url.short_url%> ><%= url.short_url%></a></th>
+      <th class="b5"><%= url.click_counter%></th>
     </tr>
   <% end%>
 
