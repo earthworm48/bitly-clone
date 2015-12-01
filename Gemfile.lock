@@ -97,6 +97,3 @@ DEPENDENCIES
   sinatra-activerecord
   sinatra-contrib
   thin
-
-BUNDLED WITH
-   1.10.6
