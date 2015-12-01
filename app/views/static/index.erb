@@ -82,10 +82,10 @@
 
   <% @urls.each do |url|%>
     <tr>
-      <td class="b5"><%= url.id%></td>
-      <td class="b5"><%= url.long_url%></td>
-      <td class="url"><a href = <%= url.short_url%> ><%= url.short_url%></a></td>
-      <td class="b5"><%= url.click_counter%></td>
+      <th class="b5"><%= url.id%></th>
+      <th class="b5"><%= url.long_url%></th>
+      <th class="url"><a href = <%= url.short_url%> ><%= url.short_url%></a></th>
+      <th class="b5"><%= url.click_counter%></th>
     </tr>
   <% end%>
 

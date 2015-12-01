@@ -26,17 +26,22 @@ TIMES = 500000
 
 
 # Increase the speed
+# CANNOT INSERT SHORT_URL (VALUE = NIL) INTO THE TABLE!
 class UrlImporter
   def self.import
     f = File.open("urls")
-    values = f.read.gsub(/[()]/,"").split(",\n")
-    # p values[0]
-      Url.transaction do
-        Url.connection.execute "INSERT INTO urls (long_url,created_at) VALUES (#{values},#{Time.now})"
-        # byebug
-      end
-    # end
+    values = f.read.gsub(/\(/,"").gsub(/\)/,"").split(",\n")
+    sql = "INSERT INTO urls (long_url,short_url,created_at,updated_at) VALUES "
+    values[0..100].each do |x|
+      short_url = SecureRandom.hex(3)
+      sql << "('#{x}', '#{short_url}', '#{Time.now}', '#{Time.now}'),"
+    end
+    sql = sql.chomp(',') + ";"
+    CONN.execute sql
+    # ActiveRecord::Base.connection.reset_pk_sequence!('urls')
   end
 end
 
 UrlImporter.import
+
+

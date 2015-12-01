@@ -6,12 +6,13 @@ require "byebug"
 
 class Url < ActiveRecord::Base
   # create the url before validate the short_url
-  before_validation :shorten
+  before_create :shorten
   validates :long_url, presence: true, :format => URI::regexp(%w(http https))
   validates :short_url, uniqueness: true, presence: true
-  default_scope {order(created_at: :asc)}
+  default_scope {order(id: :asc)}
+  # before_create: shorten
   # format: { with: /\A(http)s?\:\/\//, message: "invalid email!"}
-
+# 
   # store the short url to the database
   def shorten
     # self.short_url = Array.new(6){[*"A".."Z",*'a'..'z', *"0".."9"].sample}.join

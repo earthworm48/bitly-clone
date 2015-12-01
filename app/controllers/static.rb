@@ -1,7 +1,9 @@
 require 'byebug'
+require_relative '../../config/environments/test'
 
 get '/' do
-  @urls = Url.all.order(created_at: :asc)
+  
+  @urls = Url.all.order(id: :asc)
   @url = Url.new
   # puts "[LOG] Getting /"
   # puts "[LOG] Params: #{params.inspect}"
@@ -20,10 +22,10 @@ post '/urls' do
   @url.save
   @url.to_json
   "<tr>
-      <th class='b5'>#{@url.id}</th>
-      <th class='b5'>#{@url.long_url}</th>
-      <th class='url'><a href = <#{@url.short_url}>#{@url.short_url}</a></th>
-      <th class='b5'>#{@url.click_counter}</th>
+      <td class='b5'>#{@url.id}</td>
+      <td class='b5'>#{@url.long_url}</td>
+      <td class='url'><a href = <#{@url.short_url}>#{@url.short_url}</a></td>
+      <td class='b5'>#{@url.click_counter}</td>
    </tr>"
 end
 
