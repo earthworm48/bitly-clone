@@ -6,7 +6,6 @@ require 'securerandom'
 # require "ar-extensions"
 
 CONN = ActiveRecord::Base.connection
-TIMES = 500000
 
 # class UrlImporter
 #   def self.import

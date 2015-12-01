@@ -40,6 +40,7 @@ $(document).ready(function(){
 	           {	
 	           		// debugger
 	               $(".url-table").append(response); // show response from the php script.
+	           	   $("#long_url").val == "";		
 	           }
 	         });
 

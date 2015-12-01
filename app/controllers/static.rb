@@ -11,21 +11,23 @@ get '/' do
 end
 
 post '/urls' do
-  # puts "[LOG] Params: #{params.inspect}"
   @urls = Url.all
-  @url = Url.new(long_url: params[:long_url])
+  @url = Url.new(long_url: params[:long_url], short_url: short_url, created_at: Times.now, updated_at: Times.now)
+  # byebug
   # if @url.save
   #   redirect '/'
   # else
   #   erb :"static/index"
   # end
   @url.save
+  # byebug
   @url.to_json
+  # byebug
   "<tr>
-      <td class='b5'>#{@url.id}</td>
-      <td class='b5'>#{@url.long_url}</td>
-      <td class='url'><a href = <#{@url.short_url}>#{@url.short_url}</a></td>
-      <td class='b5'>#{@url.click_counter}</td>
+      <th class='b5'>#{@url.id}</th>
+      <th class='b5'>#{@url.long_url}</th>
+      <th class='url'><a href = <#{@url.short_url}>#{@url.short_url}</a></th>
+      <th class='b5'>#{@url.click_counter}</th>
    </tr>"
 end
 
