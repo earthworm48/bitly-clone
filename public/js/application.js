@@ -9,6 +9,9 @@ $(document).ready(function(){
 	// $("#submit_btn").click(function(){
 	// 	alert( "Thanks for choosing Shortify!!" );
 	// });
+	$("#long_url").click(function(){
+		$(this).css("border-color","red");
+	});
 
 	$( "#error-btn" ).click(function() {
 	  $( "#error-message" ).toggle( "slow" );
@@ -39,8 +42,9 @@ $(document).ready(function(){
 	           success: function(response)
 	           {	
 	           		// debugger
-	               $(".url-table").append(response); // show response from the php script.
-	           	   $("#long_url").val == "";		
+	               $(".url-table").append(response); // show response from the php script.		
+	           	   $('#long_url').val('');
+ 
 	           }
 	         });
 
