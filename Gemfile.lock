@@ -1,6 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    actionpack (4.2.1)
+      actionview (= 4.2.1)
+      activesupport (= 4.2.1)
+      rack (~> 1.6)
+      rack-test (~> 0.6.2)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    actionview (4.2.1)
+      activesupport (= 4.2.1)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.1)
     activemodel (4.2.1)
       activesupport (= 4.2.1)
       builder (~> 3.1)
@@ -20,13 +33,22 @@ GEM
     byebug (8.2.1)
     daemons (1.2.2)
     diff-lcs (1.2.5)
+    erubis (2.7.0)
     eventmachine (1.0.7)
     faker (1.5.0)
       i18n (~> 0.5)
     i18n (0.7.0)
     json (1.8.2)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    loofah (2.0.3)
+      nokogiri (>= 1.5.9)
+    mini_portile2 (2.0.0)
     minitest (5.6.1)
     multi_json (1.11.0)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.2)
     puma (2.11.3)
       rack (>= 1.1, < 2.0)
@@ -35,6 +57,14 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rails-deprecated_sanitizer (1.0.3)
+      activesupport (>= 4.2.0.alpha)
+    rails-dom-testing (1.0.7)
+      activesupport (>= 4.2.0.beta, < 5.0)
+      nokogiri (~> 1.6.0)
+      rails-deprecated_sanitizer (>= 1.0.1)
+    rails-html-sanitizer (1.0.3)
+      loofah (~> 2.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -87,6 +117,7 @@ DEPENDENCIES
   activesupport
   byebug
   faker
+  kaminari
   pg
   puma
   rails_12factor
@@ -97,3 +128,6 @@ DEPENDENCIES
   sinatra-activerecord
   sinatra-contrib
   thin
+
+BUNDLED WITH
+   1.11.2

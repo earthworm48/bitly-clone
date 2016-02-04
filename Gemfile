@@ -27,6 +27,9 @@ gem 'rspec'
 gem 'faker'
 gem 'byebug'
 
+# Adding page divider
+gem 'kaminari', :require => 'kaminari/sinatra'
+
 group :development, :test do
 	# Adding shotgun for local web hosting
 	gem 'shotgun'

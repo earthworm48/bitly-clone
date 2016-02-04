@@ -5,6 +5,44 @@
 
 
   <h1>Make it Short!</h1>
+  <div class="container">
+    <div class="jumbotron">
+      <div class ="row">
+        <div class="headline">
+          <h3>Three simple steps to solve your problem!</h3>
+            <div class="row">
+              <div class="column">
+
+                <img class="round" src="/img/copy.png">
+                <p>
+                  <span>Step 1: </br>
+                  Copy the link <span>
+
+                </p>
+
+              </div>
+
+              <div class="column">
+                <img class="round" src="/img/paste.png">
+                <p>
+                  <span>Step 2: </br> Paste the link</span>
+                </p>
+
+              </div>
+
+              <div class="column">
+                <img class="round" src="/img/click.png">
+                <p>
+                  <span>Step 3: </br> Click 'Short It'</span>
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <h3>Enter Your URL Here:</h3>
 
 
@@ -30,63 +68,20 @@
   </div>
 </center>
 
-<div class="container">
-  <div class="jumbotron">
-    <div class ="row">
-      <div class="headline">
-        <h3>Three simple steps to solve your problem!</h3>
-          <div class="row">
-            <div class="column">
 
-              <img class="round" src="/img/copy.png">
-              <p>
-                <span>Step 1: </br>
-                Copy the link <span>
 
-              </p>
+<div id="url-table">
+  <% @urls.each do |url|%>
+    <div class="url-row">
+      <p><%= url.long_url%></p>
+      
+      <p>
+        <a href = <%= url.short_url%> ><%= url.short_url%></a>
 
-            </div>
-
-            <div class="column">
-              <img class="round" src="/img/paste.png">
-              <p>
-                <span>Step 2: </br> Paste the link</span>
-              </p>
-
-            </div>
-
-            <div class="column">
-              <img class="round" src="/img/click.png">
-              <p>
-                <span>Step 3: </br> Click 'Short It'</span>
-              </p>
-            </div>
-          </div>
-      </div>
+        <span class="click-counter"><%= url.click_counter%></span>
+      </p>
     </div>
-  </div>
+  <% end%>
 </div>
 
-
-
-  <table class="url-table">
-    <!-- <table border="5"> -->
-      <!-- <table cellpadding="5"> -->
-    <tr >
-      <th class="firstrow">ID</th>
-      <th class="firstrow">Long url</th>
-      <th class="firstrow">Short url</th>
-      <th class="firstrow">Click_counter</th>
-    </tr>
-
-  <% @urls.each do |url|%>
-    <tr>
-      <th class="b5"><%= url.id%></th>
-      <th class="b5"><%= url.long_url%></th>
-      <th class="url"><a href = <%= url.short_url%> ><%= url.short_url%></a></th>
-      <th class="b5"><%= url.click_counter%></th>
-    </tr>
-  <% end%>
-
-  </table>
 

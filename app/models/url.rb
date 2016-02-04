@@ -5,6 +5,7 @@ require "net/http"
 require "byebug"
 
 class Url < ActiveRecord::Base
+  # register Kaminari::Helpers::SinatraHelpers
   # create the url before validate the short_url
   before_create :shorten
   validates :long_url, presence: true, :format => URI::regexp(%w(http https))

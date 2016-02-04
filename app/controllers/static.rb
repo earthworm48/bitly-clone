@@ -20,12 +20,15 @@ post '/urls' do
   # end
   if @url.save
     @url.to_json
-    "<tr>
-        <th class='b5'>#{@url.id}</th>
-        <th class='b5'>#{@url.long_url}</th>
-        <th class='url'><a href = <#{@url.short_url}>#{@url.short_url}</a></th>
-        <th class='b5'>#{@url.click_counter}</th>
-     </tr>"
+    "<div class='url-row'>
+      <p>#{@url.long_url}</p>
+      
+      <p>
+        <a href = #{@url.short_url}>#{@url.short_url}</a>
+
+        <span class='click-counter'>#{@url.click_counter}</span>
+      </p>
+    </div>"
    end
 end
 

@@ -127,11 +127,22 @@ img {
   height: 50%;
 }
 
-.url-table{
+.url-row{
+  width:760px;
   margin: 30px auto;
-  border-collapse: separate;
-  padding: 10px;
+  padding: 24px 26px;
+  border-radius: 5px;
   background:rgba(152,152,152,0.5); 
+}
+
+.url-row p a{
+    color:#1A2600;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.click-counter{
+  float:right;
 }
 
 .firstrow{

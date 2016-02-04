@@ -42,7 +42,7 @@ $(document).ready(function(){
 	           success: function(response)
 	           {	
 	           		// debugger
-	               $(".url-table").append(response); // show response from the php script.		
+	               $("#url-table").prepend(response); // show response from the php script.		
 	           	   $('#long_url').val('');
  
 	           }
