@@ -3,7 +3,7 @@ require_relative '../../config/environments/test'
 
 get '/' do
   
-  @urls = Url.all.order(id: :asc)
+  @urls = Url.all.order(id: :desc)
   @url = Url.new
   # puts "[LOG] Getting /"
   # puts "[LOG] Params: #{params.inspect}"
