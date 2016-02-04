@@ -32,20 +32,22 @@ $(document).ready(function(){
 
 
 	$("#target").submit(function(e) {
-
-    // var url = "path/to/your/script.php"; // the script where you handle the form input.
-
+		
+		// var url = "path/to/your/script.php"; // the script where you handle the form input.
 	    $.ajax({
+	           
 	           type: "POST",
 	           url: "/urls",
 	           data: $("#target").serialize(), // serializes the form's elements.
+	           
 	           success: function(response)
 	           {	
-	           		// debugger
+	           		
 	               $("#url-table").prepend(response); // show response from the php script.		
 	           	   $('#long_url').val('');
  
-	           }
+	           },
+
 	         });
 
 	    e.preventDefault(); // avoid to execute the actual submit of the form.

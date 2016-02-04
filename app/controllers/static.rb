@@ -18,7 +18,9 @@ post '/urls' do
   # else
   #   erb :"static/index"
   # end
+
   if @url.save
+
     @url.to_json
     "<div class='url-row'>
       <p>#{@url.long_url}</p>
@@ -29,7 +31,9 @@ post '/urls' do
         <span class='click-counter'>#{@url.click_counter}</span>
       </p>
     </div>"
-   end
+  else
+    redirect '/'
+  end
 end
 
 get '/:short_url' do

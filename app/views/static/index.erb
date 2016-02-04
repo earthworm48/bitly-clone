@@ -1,9 +1,3 @@
-<!-- <body bgcolor="grey">
-  <body text="purple">
-    <body link="blue"> -->
-
-
-
   <h1>Make it Short!</h1>
   <div class="container">
     <div class="jumbotron">
@@ -45,9 +39,6 @@
 
   <h3>Enter Your URL Here:</h3>
 
-
-
-
   <center>
     <div class = "input_bar">
       <form  id="target" action = '/urls' method = "post">
@@ -59,12 +50,11 @@
 
 <center>
   <div ID="error-block">
-  <button id="error-btn">Show Error Message</button>  
-  <h4 id = "error-message" style="color:red;display: none"><strong>Errors!!</strong><br>
-  <% @url.errors.full_messages.each do |x|%>
-  <%=  x %>
-  <% end %>
-  </h4>
+    <% if @url.errors.any? %>
+      <% @url.errors.full_messages.each do |x|%>
+        <%=  x %>
+      <% end %>
+    <% end%>
   </div>
 </center>
 
