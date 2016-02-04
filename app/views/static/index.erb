@@ -49,12 +49,7 @@
   </center>
 
 <center>
-  <div ID="error-block">
-    <% if @url.errors.any? %>
-      <% @url.errors.full_messages.each do |x|%>
-        <%=  x %>
-      <% end %>
-    <% end%>
+  <div id="error-block" style="display:none">
   </div>
 </center>
 

@@ -45,7 +45,13 @@ $(document).ready(function(){
 	           		
 	               $("#url-table").prepend(response); // show response from the php script.		
 	           	   $('#long_url').val('');
- 
+	           	   //debugger
+	           	   if (response.length === 0){
+	           	   	//debugger
+	           	   	  $('#error-block').show();
+	           	      $('#error-block').html("It is not a valid url!");
+	           	   }
+ 				   
 	           },
 
 	         });

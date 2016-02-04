@@ -20,7 +20,6 @@ post '/urls' do
   # end
 
   if @url.save
-
     @url.to_json
     "<div class='url-row'>
       <p>#{@url.long_url}</p>
@@ -31,8 +30,6 @@ post '/urls' do
         <span class='click-counter'>#{@url.click_counter}</span>
       </p>
     </div>"
-  else
-    redirect '/'
   end
 end
 
